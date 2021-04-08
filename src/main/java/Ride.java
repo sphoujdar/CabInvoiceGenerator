@@ -1,13 +1,13 @@
 public class Ride {
-    private int distance;
+    private double distance;
     private int time;
 
-    public Ride(int distance, int time) {
+    public Ride(double distance, int time) {
         this.distance = distance;
         this.time = time;
     }
 
-    public int getDistance() {
+    public double getDistance() {
         return distance;
     }
 
