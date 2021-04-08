@@ -31,6 +31,16 @@ public class CabInvoiceGeneratorTest {
         EnhancedInvoice enhancedInvoice = runnerObject.calculateEnhancedInvoice(cabRides);
         Assert.assertEquals(3, enhancedInvoice.numberOfRides, 0.1);
         Assert.assertEquals(133, enhancedInvoice.totalFare, 0.1);
-        Assert.assertEquals(44.2, enhancedInvoice.averageFarePerRide, 0.1);
+        Assert.assertEquals(44.3, enhancedInvoice.averageFarePerRide, 0.1);
+    }
+
+    @Test
+    public void givenOneRide_CalculateEnhancedInvoice_ReturnTrueIfCorrectlyCalculated(){
+        Ride cabRide2 = new Ride(0.1 , 1);
+        InvoiceGenerator runnerObject = new InvoiceGenerator();
+        EnhancedInvoice enhancedInvoice = runnerObject.calculateEnhancedInvoice(cabRide2);
+        Assert.assertEquals(1, enhancedInvoice.numberOfRides, 0.1);
+        Assert.assertEquals(5, enhancedInvoice.totalFare, 0.1);
+        Assert.assertEquals(5, enhancedInvoice.averageFarePerRide, 0.1);
     }
 }

@@ -17,7 +17,12 @@ public class InvoiceGenerator {
     }
 
     public EnhancedInvoice calculateEnhancedInvoice(Ride[] cabRides) {
-        EnhancedInvoice currentEnhancedInvoice = new EnhancedInvoice();
+        EnhancedInvoice currentEnhancedInvoice = new EnhancedInvoice(cabRides);
+        return  currentEnhancedInvoice;
+    }
+
+    public EnhancedInvoice calculateEnhancedInvoice(Ride cabRide) {
+        EnhancedInvoice currentEnhancedInvoice = new EnhancedInvoice(cabRide);
         return  currentEnhancedInvoice;
     }
 }
