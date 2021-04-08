@@ -1,16 +1,22 @@
-import java.util.Optional;
-
 public class Ride {
     private double distance;
     private int time;
-    private boolean premiumRide;
+    private final boolean premiumRide;
 
     public Ride(double distance, int time) {
         this.distance = distance;
         this.time = time;
+        this.premiumRide = false;
     }
 
     public Ride(double distance, int time, boolean premium) {
+        this.distance = distance;
+        this.time = time;
+        this.premiumRide = premium;
+    }
+
+    public boolean isPremiumRide() {
+        return premiumRide;
     }
 
     public double getDistance() {

@@ -55,7 +55,6 @@ public class CabInvoiceGeneratorTest {
         Ride cabRide6 = new Ride(2 , 3);
         Ride[] cabRidesList2 = {cabRide4,cabRide5,cabRide6};
         Ride cabRide7 = new Ride(4.0 , 3);
-        //7 , 310.4 , 44.3 +- 2
         RideRepository user1Repository = new RideRepository("User1");
         user1Repository.addRides(cabRidesList1);
         user1Repository.addRides(cabRidesList2);
@@ -78,7 +77,6 @@ public class CabInvoiceGeneratorTest {
         Ride cabRide6 = new Ride(2 , 3);
         Ride[] cabRidesList2 = {cabRide4,cabRide5,cabRide6};
         Ride cabRide7 = new Ride(4.0 , 3);
-        //7 , 325.4 , 44.3 +- 2
         RideRepository user1Repository = new RideRepository("User1");
         user1Repository.addRides(cabRidesList1);
         user1Repository.addRides(cabRidesList2);
@@ -87,6 +85,6 @@ public class CabInvoiceGeneratorTest {
         EnhancedInvoice enhancedInvoice = runnerObject.calculateEnhancedInvoice("User1");
         Assert.assertEquals(7, enhancedInvoice.numberOfRides, 0);
         Assert.assertEquals(325.4, enhancedInvoice.totalFare, 2);
-        Assert.assertEquals(46.5, enhancedInvoice.averageFarePerRide, .2);
+        Assert.assertEquals(46.3, enhancedInvoice.averageFarePerRide, .2);
     }
 }

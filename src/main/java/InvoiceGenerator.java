@@ -1,11 +1,20 @@
 public class InvoiceGenerator {
+    
+    public static final int COST_PER_KILOMETER_REGULAR = 10;
+    public static final int COST_MIN_REGULAR = 5;
+    public static final int COST_PER_MINUTE_REGULAR = 1;
 
-    public static final int COST_PER_KILOMETER = 10;
-    public static final int COST_PER_MINUTE = 1;
+    public static final int COST_PER_KILOMETER_PREMIUM = 15;
+    public static final int COST_MIN_PREMIUM = 20;
+    public static final int COST_PER_MINUTE_PREMIUM = 2;
 
     public double calculateFare(Ride currentRide) {
-        double currentRideFare = (currentRide.getDistance()*COST_PER_KILOMETER + currentRide.getTime()*COST_PER_MINUTE);
-        return currentRideFare > 5 ? currentRideFare : 5;
+        int costPerKM = COST_PER_KILOMETER_REGULAR, costPerMin = COST_PER_MINUTE_REGULAR, costMin = COST_MIN_REGULAR;
+        if(currentRide.isPremiumRide()){
+            costPerKM = COST_PER_KILOMETER_PREMIUM; costPerMin = COST_PER_MINUTE_PREMIUM; costMin = COST_MIN_PREMIUM;
+        }
+        double currentRideFare = (currentRide.getDistance() * costPerKM + currentRide.getTime()* costPerMin);
+        return currentRideFare > costMin ? currentRideFare : costMin;
     }
 
     public double calculateFare(Ride[] cabRides) {
