@@ -25,4 +25,9 @@ public class InvoiceGenerator {
         EnhancedInvoice currentEnhancedInvoice = new EnhancedInvoice(cabRide);
         return  currentEnhancedInvoice;
     }
+
+    public EnhancedInvoice calculateEnhancedInvoice(RideRepository user1Repository) {
+        EnhancedInvoice currentEnhacnedInvoice = new EnhancedInvoice(user1Repository.getAllRides());
+        return currentEnhacnedInvoice;
+    }
 }

@@ -5,9 +5,10 @@ public class EnhancedInvoice {
 
     public EnhancedInvoice(Ride[] cabRides) {
         InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
-        this.numberOfRides = cabRides.length;
-        this.totalFare = invoiceGenerator.calculateFare(cabRides);
-        this.averageFarePerRide = this.totalFare/this.numberOfRides;
+        boolean areCabRidesReceived = cabRides == null ;
+        this.numberOfRides = areCabRidesReceived ? 0 : cabRides.length;
+        this.totalFare = areCabRidesReceived ? 0 : invoiceGenerator.calculateFare(cabRides);
+        this.averageFarePerRide = areCabRidesReceived ? 0 : this.totalFare/this.numberOfRides;
     }
 
     public EnhancedInvoice(Ride cabRide) {
