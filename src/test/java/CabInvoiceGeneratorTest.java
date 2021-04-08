@@ -2,7 +2,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CabInvoiceGeneratorTest {
-
     @Test
     public void givenDistanceAndTime_CalculateFare_ReturnTrueIfCorrectlyCalculated(){
         Ride cabRide = new Ride(10 , 5);
@@ -19,7 +18,6 @@ public class CabInvoiceGeneratorTest {
         Ride[] cabRides = {cabRide1,cabRide2,cabRide3};
         InvoiceGenerator runnerObject = new InvoiceGenerator();
         double totalFare = runnerObject.calculateFare(cabRides);
-        Assert.assertEquals(130, totalFare, 0);
+        Assert.assertEquals(133, totalFare, 0);
     }
-
 }
