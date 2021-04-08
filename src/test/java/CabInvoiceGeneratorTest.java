@@ -61,7 +61,7 @@ public class CabInvoiceGeneratorTest {
         user1Repository.addRides(cabRidesList2);
         user1Repository.addRides(cabRide7);
         InvoiceGenerator runnerObject = new InvoiceGenerator();
-        EnhancedInvoice enhancedInvoice = runnerObject.calculateEnhancedInvoice(user1Repository.getAllRides());
+        EnhancedInvoice enhancedInvoice = runnerObject.calculateEnhancedInvoice("User1");
         Assert.assertEquals(7, enhancedInvoice.numberOfRides, 0);
         Assert.assertEquals(310.4, enhancedInvoice.totalFare, 2);
         Assert.assertEquals(44.3, enhancedInvoice.averageFarePerRide, .2);

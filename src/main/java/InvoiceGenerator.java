@@ -17,17 +17,14 @@ public class InvoiceGenerator {
     }
 
     public EnhancedInvoice calculateEnhancedInvoice(Ride[] cabRides) {
-        EnhancedInvoice currentEnhancedInvoice = new EnhancedInvoice(cabRides);
-        return  currentEnhancedInvoice;
+        return new EnhancedInvoice(cabRides);
     }
 
     public EnhancedInvoice calculateEnhancedInvoice(Ride cabRide) {
-        EnhancedInvoice currentEnhancedInvoice = new EnhancedInvoice(cabRide);
-        return  currentEnhancedInvoice;
+        return new EnhancedInvoice(cabRide);
     }
 
-    public EnhancedInvoice calculateEnhancedInvoice(RideRepository user1Repository) {
-        EnhancedInvoice currentEnhacnedInvoice = new EnhancedInvoice(user1Repository.getAllRides());
-        return currentEnhacnedInvoice;
+    public EnhancedInvoice calculateEnhancedInvoice(String userName) {
+        return new EnhancedInvoice(userName);
     }
 }

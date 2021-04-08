@@ -17,4 +17,17 @@ public class EnhancedInvoice {
         this.totalFare = invoiceGenerator.calculateFare(cabRide);
         this.averageFarePerRide = this.totalFare;
     }
+
+    public EnhancedInvoice(String userID) {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        RideRepository rideRepository = new RideRepository();
+        for (RideRepository rideRepoIterator : RideRepository.allRideRepositories) {
+                if (rideRepoIterator.getUserName().equals(userID)){
+                    rideRepository = rideRepoIterator;
+                }
+        }
+        this.numberOfRides = rideRepository.getAllRides().length;
+        this.totalFare = invoiceGenerator.calculateFare(rideRepository.getAllRides());
+        this.averageFarePerRide = this.totalFare / this.numberOfRides;
+    }
 }
