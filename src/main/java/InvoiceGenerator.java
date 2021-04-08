@@ -15,4 +15,9 @@ public class InvoiceGenerator {
         }
         return totalFare;
     }
+
+    public EnhancedInvoice calculateEnhancedInvoice(Ride[] cabRides) {
+        EnhancedInvoice currentEnhancedInvoice = new EnhancedInvoice();
+        return  currentEnhancedInvoice;
+    }
 }
